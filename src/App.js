@@ -16,4 +16,4 @@ function App() {
 
 export default App;
 
-//<></>this is a jsx or React fragment which allows you to return multiple elements
+//<></>this is a jsx or React fragment which allows you to return multiple elements.
