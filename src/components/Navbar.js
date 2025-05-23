@@ -7,7 +7,8 @@ export default function Navbar({
   title = "Title text here",
   about = "About text here",
   mode,
-  switchMode
+  switchMode,
+  secondSwitch
 }) 
 {
   return (
@@ -55,7 +56,11 @@ export default function Navbar({
 
             <div className={`form-check form-switch text-${mode==="light"?"dark":"light"}`}>
               <input className="form-check-input" onClick={switchMode} type="checkbox" role="switch" id="switchCheckDefault"/>
-              <label className="form-check-label" for="switchCheckDefault">{`Enable ${mode==="light"?"Dark":"Light"} Mode`}</label>
+              <label className="form-check-label" htmlFor="switchCheckDefault">{`Enable ${mode==="light"?"Dark":"Light"} Mode`}</label>
+            </div>
+            <div className={`mx-2 form-check form-switch text-${mode==="light"?"dark":"light"}`}>
+              <input className="form-check-input" onClick={secondSwitch} type="checkbox" role="switch" id="switchCheckDefault"/>
+              <label className="form-check-label" htmlFor="switchCheckDefault">{`Enable ${mode==="blue"?"Blue":"Light"} Mode`}</label>
             </div>
           </div>
         </div>
