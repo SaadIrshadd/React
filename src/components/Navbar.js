@@ -1,15 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-//By this way you can set default values to the props
+//It is another method of passing props you can also set default values to the props
 //It is called destructuring method
 export default function Navbar({
   title = "Title text here",
   about = "About text here",
-}) {
+  mode,
+  switchMode
+}) 
+{
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {title}
@@ -38,17 +41,22 @@ export default function Navbar({
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
+            {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-light" type="submit">
                 Search
               </button>
-            </form>
+            </form> */}
+
+            <div className={`form-check form-switch text-${mode==="light"?"dark":"light"}`}>
+              <input className="form-check-input" onClick={switchMode} type="checkbox" role="switch" id="switchCheckDefault"/>
+              <label className="form-check-label" for="switchCheckDefault">{`Enable ${mode==="light"?"Dark":"Light"} Mode`}</label>
+            </div>
           </div>
         </div>
       </nav>
