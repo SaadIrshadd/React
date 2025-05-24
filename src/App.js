@@ -19,7 +19,7 @@ function App() {
     } else {
       setDarkMode("light");
       document.body.style.backgroundColor = "white";
-      AlertMsg("Light mode has been enabled");
+      AlertMsg("Dark mode has been disabled");
       document.title = "TextUtils - Home";
     }
   };
@@ -50,10 +50,10 @@ function App() {
       <BrowserRouter>
         <Navbar title="Textutils" about="About" mode={DarkMode} switchMode={Switch} secondSwitch={secSwitch}/>
 
-        <Alert alert={alert} />
+        <Alert alert={alert} mode={DarkMode}/>
         
         <Routes>
-          <Route path="/about" element={<About />}>
+          <Route path="/about" element={<About mode={DarkMode}/>}>
           </Route>
           
           <Route path="/" element={

@@ -43,26 +43,17 @@ export default function Navbar({
                 </Link>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-light" type="submit">
-                Search
-              </button>
-            </form> */}
-
+          
             <div className={`form-check form-switch text-${mode==="light"?"dark":"light"}`}>
               <input className="form-check-input" onClick={switchMode} type="checkbox" role="switch" id="switchCheckDefault"/>
-              <label className="form-check-label" htmlFor="switchCheckDefault">{`Enable ${mode==="light"?"Dark":"Light"} Mode`}</label>
+              <label className="form-check-label" htmlFor="switchCheckDefault">{`${mode==="light"?"Enable":"Disable"} Dark Mode`}</label>
             </div>
-            <div className={`mx-2 form-check form-switch text-${mode==="light"?"dark":"light"}`}>
+
+            {/* <div className={`form-check form-switch text-${mode==="light"?"dark":"light"}`}>
               <input className="form-check-input" onClick={secondSwitch} type="checkbox" role="switch" id="switchCheckDefault"/>
-              <label className="form-check-label" htmlFor="switchCheckDefault">{`Enable ${mode==="blue"?"Blue":"Light"} Mode`}</label>
-            </div>
+              <label className="form-check-label" htmlFor="switchCheckDefault">{`Enable ${mode==="light"?"Blue":"Light"} Mode`}</label>
+            </div> */}
+          
           </div>
         </div>
       </nav>
@@ -78,7 +69,7 @@ Navbar.propTypes = {
 };
 
 // This is how you can set default props (works only if you dont destructure)
-Navbar.defaultProps = {
-  title: "Default Title",
-  about: "Default About Text",
-};
+// Navbar.defaultProps = {
+//   title: "Default Title",
+//   about: "Default About Text",
+// };
